@@ -14,19 +14,19 @@ class Persona {
     }
 }
 
-clase Desarrollador extends Persona {
+class Desarrollador extends Persona {
     constructor(nombre, apellido, altura) {
-        this.nombre = nombre
-        this.apellido = apellido
-        this.altura = altura
+        super(nombre, apellido, altura)
+        
     }
     saludar() {
-        console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y mido ${this.altura} mts.`)
-    },
+        console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy Desarrollador`)
+    }
     soyAlto(){
 
     }
 }
+
 
 
 
