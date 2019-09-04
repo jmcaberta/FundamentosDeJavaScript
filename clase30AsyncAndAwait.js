@@ -18,26 +18,15 @@ function onError (id) {
     console.log(`Sucedio un error al obtener el personaje: ${id}`)
 }
 
-var ids = [1, 2, 3, 4, 5, 7, 8]
-// var promesas = ids.map(function (id) {
-//     return obtenerPersonaje(id)
-// })
-
-var promesas = ids.map(id => obtenerPersonaje(id))
-Promise
-    .all(promesas)
-    .then(personajes => console.log(personajes))
-    .catch(onError)
-
+async function obtenerPersonajes() {
+    var ids = [1, 2, 3, 4, 5, 7, 8]
+    var promesas = ids.map(id => obtenerPersonaje(id))
+    try{
+    var personajes = await Promise.all(promesas)
+    console.log(personajes)
+    }catch(id) {
+    onError(id)
+}
 
 
-// obtenerPersonaje(1)
-//     .then(personaje1 => {
-//         console.log(`El personaje 1 es: ${personaje1.name}`)
-//         return obtenerPersonaje(2)
-//     })
-//     .then(personaje2 => {
-//         console.log(`El personaje 2 es: ${personaje2.name}`)
-//         return obtenerPersonaje(3)
-//     })
-//     .catch(onError)
+obtenerPersonajes()
