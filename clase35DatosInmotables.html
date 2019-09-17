@@ -8,8 +8,18 @@
 </head>
 <body>
     <script>
-        
+        const miguel = {
+            nombre: 'Miguel',
+            apellido: 'Caberta',
+            edad: 41
+        }
     
+        const cumpleaños = persona => persona.edad++
+
+        const cumpleañosInmutable = persona => ({
+            ...persona,
+            edad: persona.edad + 1
+        })
 
     </script>
 </body>
