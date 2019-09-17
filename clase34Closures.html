@@ -7,6 +7,20 @@
     <title>Entendiendo los Closures de JavaScript</title>
 </head>
 <body>
-    
+    <script>
+        function crearsaludo(finalDeFrase) {
+            return function (nombre) {
+                console.log(`${nombre} ${finalDeFrase}`)
+            }
+        }
+
+        const saludoMexicano = crearsaludo('Que onda Weeeeey!!! no mames cuantos pinches años sin verte, pinche puñal te escondes cabron, una cheve o ke?')
+        const saludoAleman = crearsaludo('Alterschewider Mein Freund, wie geht es dir!!')
+        const saludoGringo = crearsaludo('Hey!!! how are you my friend!!')
+        
+        saludoMexicano('Miguel')
+        saludoAleman('Miguel')
+        saludoGringo('Miguel')
+    </script>
 </body>
 </html>
