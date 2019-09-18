@@ -20,14 +20,18 @@
             edad: 43
         }
 
-        function saludar () {
-            console.log(`Hola mi nombre es ${this.nombre}`)
+        function saludar (saludo = 'Hola') {
+            console.log(`${saludo} mi nombre es ${this.nombre}`)
         }
 
-        const saludarMiguel = saludar.bind(miguel)
-        const saludarOlivia = saludar.bind(olivia)
+        // const saludarMiguel = saludar.bind(miguel)
+        // const saludarOlivia = saludar.bind(olivia)
 
-        setTimeout(saludar.bind(miguel), 1000)
+        // setTimeout(saludar.bind(miguel), 1000)
+
+        //saludar.call(miguel, 'Hola amiguito')
+        saludar.apply(miguel, ['Hola amiguito'])
+
     </script>
 </body>
 </html>
